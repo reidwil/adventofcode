@@ -34,4 +34,23 @@ opcode_machine <- function(data) {
 # Test and make sure I've got the right answer
 opcode_machine(x)
 
+# -------------------------
+# Part 2
 
+for(noun in 1:100) {
+  
+  for(verb in 1:100) {
+    
+    temp <- x
+    temp[2] <- noun
+    temp[3] <- verb
+    opcode_machine(temp)
+    if(temp[1] == 19690720) {
+      
+      print("Answer found")
+      print(noun * 100 + verb)
+      stop()
+      
+    }
+  }
+}
