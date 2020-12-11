@@ -1,19 +1,13 @@
-from os import replace
-import pandas as pd
-from pandas.core.arrays.categorical import contains
+import pandas
 
-data = pd.read_csv('data.txt', delimiter=' ')
-
+data = pandas.read_csv('data.txt', delimiter=' ')
+# idk how do use pandas to get these in lists
 passwords = [x for x in data['password']]
 letters =   [x for x in data['letter']]
 minimums =  [x for x in data['min']]
 maximums =  [x for x in data['max']]
-
-# initializing the counts
 count = 0
-count_2 = 0
 
-# looping through the zipped lists (idk how to use pandas tbh)
 for letter, password, mins, maxs in zip(letters, passwords, minimums, maximums):
     letter_count = password.count(letter)
     if letter_count >= mins:
