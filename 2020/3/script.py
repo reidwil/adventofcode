@@ -17,3 +17,13 @@ def get_output(down_increment, right_increment):
         right += right_increment
     
     return trees
+
+# task 1
+get_output(1,3)
+
+# task 2
+get_output(1,1)
+get_output(3,1)
+get_output(5,1)
+get_output(7,1)
+get_output(1,2)
