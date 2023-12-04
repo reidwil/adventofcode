@@ -4,19 +4,6 @@ import aocd
 
 data = aocd.get_data(day=3, year=2023).split('\n')
 
-# data = [
-#     '467..114..',
-#     '...*......',
-#     '..35..633.',
-#     '......#...',
-#     '617*......',
-#     '.....+.58.',
-#     '..592.....',
-#     '......755.',
-#     '...$.*....',
-#     '.664.598..',
-# ]
-
 def find_links(data):
     """Take the data and create a list of lists for each numeric sequence"""
     output = []
