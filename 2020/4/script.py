@@ -25,30 +25,30 @@ def checker(items):
         return bool(int(items[1]) in range(1920, 2003))
 
     # Issue year (between 2010 and 2020)
-    if items[0] == 'iyr':
+    elif items[0] == 'iyr':
         return bool(int(items[1]) in range(2010, 2021))
 
     # Experiation year (between 2020 and 2030)
-    if items[0] == 'eyr':
+    elif items[0] == 'eyr':
         return bool(int(items[1]) in range(2020, 2031)) 
     
     # Height (if cm - between 150 and 193 | if in - between 59 and 76)
-    if items[0] == 'hgt':
+    elif items[0] == 'hgt':
         if items[1].endswith('cm'):
             return bool(int(items[1].replace('cm','')) in range(150,194))
         else:
             return bool(int(items[1].replace('in','')) in range(59, 77))
     
     # Hair color (a # and then exactly six chars that are 0-9 or a-f)
-    if items[0] == 'hcl':
+    elif items[0] == 'hcl':
         return bool(re.search("^#[a-f0-9]{6}$", items[1]))
 
     # Eye color needs to be one of exactly ['amb', 'blu', 'brn', 'gry', 'grn', 'hzl', 'oth']
-    if items[0] == 'ecl':
+    elif items[0] == 'ecl':
         return bool(items[1] in ['amb', 'blu', 'brn', 'gry', 'grn', 'hzl', 'oth'])
 
     # Passport ID is a nine-digit number (including leading zeros)
-    if items[0] == 'pid':
+    elif items[0] == 'pid':
         return bool(len(items[1]) == 9)
 
 def task2():
